@@ -1,0 +1,17 @@
+<resources>
+    <!--Welcome page-->
+    <string name="app_name">Boredom Buster</string>
+    <string name="welcome">Looking for something to do today? We\'ll ask you a couple of questions and then give you some fun ideas that fit your budget, time of day and group size.</string>
+    <string name="to_begin">Tap \"Get Started\" to begin.</string>
+    <string name="get_started">Get Started</string>
+
+    <!--Selection-->
+    <string name="budget">"What's your budget?"</string>
+    <string name="time">"What time of day?"</string>
+    <string name="group_size">"How many people in group?"</string>
+    <string name="plus">+</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_selection">Selection</string>
+    <string name="title_activity_results">Results</string>
+</resources>
