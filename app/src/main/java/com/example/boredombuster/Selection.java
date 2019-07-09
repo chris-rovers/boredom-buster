@@ -6,9 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.content.Intent;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -26,7 +23,7 @@ public class Selection extends AppCompatActivity {
 
   private ArrayList<Button> budgetOptions = new ArrayList<>();
   private int budgetIDs[] = {R.id.button_free, R.id.button_low, R.id.button_mid, R.id.button_high};
-  private String budgetValue[] = {"free", "low", "mid", "high"};
+  private String budgetValue[] = {"Free", "Low", "Mid", "High"};
 
   private ArrayList<String> mornActivities = new ArrayList<String>();
   private ArrayList<String> mornTerms = new ArrayList<String>();
@@ -40,23 +37,16 @@ public class Selection extends AppCompatActivity {
   Button btnResult, btnFree, btnLow, btnMid, btnHigh,
           btnMorn, btnAft, btnEve, btnSingle, btnMany;
 
+  // variables to be set based on user selection
   public String budgetVal = "";
   public String mornVal = "";
   public String aftVal = "";
   public String eveVal = "";
   public String groupVal = "";
 
-  public boolean free = false;
-  public boolean low = false;
-  public boolean mid = false;
-  public boolean high = false;
   public boolean morning = false;
   public boolean afternoon = false;
   public boolean evening = false;
-  public boolean single = false;
-  public boolean many = false;
-
-  // public buttons = ["btnFree", "btnLow", "btnMid", "btnHigh"];
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +69,7 @@ public class Selection extends AppCompatActivity {
     btnSingle = findViewById(R.id.button_single);
     btnMany = findViewById(R.id.button_many);
 
-    // add budget buttons to array list for use in BudgetSelect() function.
+    // add budget buttons to ArrayList for use in BudgetSelect() function.
     budgetOptions.add(btnFree);
     budgetOptions.add(btnLow);
     budgetOptions.add(btnMid);
@@ -89,7 +79,7 @@ public class Selection extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         GetActivity(); // query the DB for matching activities (budget, time, group size)
-        Bundle activitiesBundle = new Bundle(); // send arrays of all results to Results activity
+        Bundle activitiesBundle = new Bundle(); // send ArrayLists of all results to Results activity
         activitiesBundle.putStringArrayList("mornAs", mornActivities);
         activitiesBundle.putStringArrayList("mornTs", mornTerms);
         activitiesBundle.putStringArrayList("aftAs", aftActivities);
@@ -103,7 +93,7 @@ public class Selection extends AppCompatActivity {
     });
   } // onCreate()
 
-  public void BudgetSelect(View v) {
+  public void BudgetSelect(View v) { // set budget based on user selection
     int ID = v.getId();
 
     for(int i = 0; i < budgetIDs.length; i++)
@@ -122,7 +112,7 @@ public class Selection extends AppCompatActivity {
     }
   } // BudgetSelect()
 
-  public void TimeSelect(View v) {
+  public void TimeSelect(View v) { // set time frame based on user selection
 
     int ID = v.getId();
 
@@ -178,7 +168,7 @@ public class Selection extends AppCompatActivity {
     } // switch
   } // TimeSelect()
 
-  public void GroupSelect(View v) {
+  public void GroupSelect(View v) { // set group size based on user selection
     if(v.getId() == R.id.button_single)
     {
       btnSingle.startAnimation(animBlink);
@@ -197,7 +187,7 @@ public class Selection extends AppCompatActivity {
     }
   } // GroupSelect()
 
-  public void GetActivity()
+  public void GetActivity() // query db for matching activities based on user selections
   {
     String curActivity;
     String curSearchTerm;
@@ -230,7 +220,7 @@ public class Selection extends AppCompatActivity {
         }
       }
       db.close();
-    } // if Morning
+    } // end if Morning
     if(aftVal.equals("Afternoon"))
     {
       db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
@@ -258,7 +248,7 @@ public class Selection extends AppCompatActivity {
         }
       }
       db.close();
-    } // if Afternoon
+    } // end if Afternoon
     if(eveVal.equals("Evening"))
     {
       db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
@@ -286,7 +276,7 @@ public class Selection extends AppCompatActivity {
         }
       }
       db.close();
-    } // if Evening
-  }
+    } // end if Evening
+  } // GetActivity()
 
 } // class

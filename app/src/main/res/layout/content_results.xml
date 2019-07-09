@@ -17,146 +17,656 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            ///////////////////////////////
+            // Morning activities
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/layout_morning"
+                android:layout_width="@dimen/parent_width"
+                android:layout_height="@dimen/parent_height"
                 android:orientation="vertical">
+                <TextView
+                    android:id="@+id/morn_title"
+                    android:layout_width="@dimen/time_header_width"
+                    android:layout_height="match_parent"
+                    android:text="@string/morn_results_title"
+                    android:textColor="@color/colorBlack"
+                    android:textFontWeight="300"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/time_header_textSize"
+                    android:layout_marginLeft="@dimen/time_header_marginLeft"/>
+                ///////////////////////////////
                 // Morning activity one
                 <LinearLayout
                     android:id="@+id/morn_result_one"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="@dimen/activity_height"
                     android:orientation="vertical"
-                    android:layout_margin="15dp">
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:background="@drawable/textbox_border">
+                        android:orientation="horizontal">
                         <TextView
                             android:id="@+id/morn_text_one"
-                            android:layout_width="340dp"
+                            android:layout_width="@dimen/activity_text_width"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:textColor="@color/colorBlack"
                             android:textFontWeight="300"
                             android:textAlignment="center"
-                            android:textSize="30sp"/>
-                        <Button
-                            android:id="@+id/morn_exp_button_one"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:onClick="ActivityExpand"
-                            android:text="@string/plus"
-                            android:textAlignment="center"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/morn_exp_button_one"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/morn_replace_button_one"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
                     </LinearLayout>
-                    <ImageView
-                        android:id="@+id/morn_image_one"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/morn_image_one"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
                     <Button
                         android:id="@+id/morn_search_button_one"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:textStyle="italic"/>
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
                 </LinearLayout>
+                ///////////////////////////////
                 // Morning activity two
                 <LinearLayout
                     android:id="@+id/morn_result_two"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="@dimen/activity_height"
                     android:orientation="vertical"
-                    android:layout_margin="15dp">
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:background="@drawable/textbox_border">
+                        android:layout_gravity="center">
                         <TextView
                             android:id="@+id/morn_text_two"
-                            android:layout_width="340dp"
+                            android:layout_width="@dimen/activity_text_width"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:textColor="@color/colorBlack"
                             android:textFontWeight="300"
                             android:textAlignment="center"
-                            android:textSize="30sp"/>
-                        <Button
-                            android:id="@+id/morn_exp_button_two"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:onClick="ActivityExpand"
-                            android:text="@string/plus"
-                            android:textAlignment="center"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/morn_exp_button_two"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/morn_replace_button_two"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
                     </LinearLayout>
-                    <ImageView
-                        android:id="@+id/morn_image_two"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/morn_image_two"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
                     <Button
                         android:id="@+id/morn_search_button_two"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:textStyle="italic"/>
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
                 </LinearLayout>
+                ///////////////////////////////
                 // Morning activity three
                 <LinearLayout
                     android:id="@+id/morn_result_three"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="@dimen/activity_height"
                     android:orientation="vertical"
-                    android:layout_margin="15dp">
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:background="@drawable/textbox_border">
+                        android:layout_gravity="center">
                         <TextView
                             android:id="@+id/morn_text_three"
-                            android:layout_width="340dp"
+                            android:layout_width="@dimen/activity_text_width"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:textColor="@color/colorBlack"
                             android:textFontWeight="300"
                             android:textAlignment="center"
-                            android:textSize="30sp"/>
-                        <Button
-                            android:id="@+id/morn_exp_button_three"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:onClick="ActivityExpand"
-                            android:text="@string/plus"
-                            android:textAlignment="center"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="14sp" />
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/morn_exp_button_three"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/morn_replace_button_three"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
                     </LinearLayout>
-                    <ImageView
-                        android:id="@+id/morn_image_three"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/morn_image_three"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
                     <Button
                         android:id="@+id/morn_search_button_three"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:textStyle="italic"/>
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
                 </LinearLayout>
             </LinearLayout>
+            ///////////////////////////////
+            // Afternoon activities
+            <LinearLayout
+                android:id="@+id/layout_afternoon"
+                android:layout_width="@dimen/parent_width"
+                android:layout_height="@dimen/parent_height"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/aft_title"
+                    android:layout_width="@dimen/time_header_width"
+                    android:layout_height="match_parent"
+                    android:text="@string/aft_results_title"
+                    android:textColor="@color/colorBlack"
+                    android:textFontWeight="300"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/time_header_textSize"
+                    android:layout_marginLeft="@dimen/time_header_marginLeft"/>
+                ///////////////////////////////
+                // Afternoon activity one
+                <LinearLayout
+                    android:id="@+id/aft_result_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_height"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/aft_text_one"
+                            android:layout_width="@dimen/activity_text_width"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlack"
+                            android:textFontWeight="300"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/aft_exp_button_one"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/aft_replace_button_one"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/aft_image_one"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
+                    <Button
+                        android:id="@+id/aft_search_button_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
+                </LinearLayout>
+                ///////////////////////////////
+                // Afternoon activity two
+                <LinearLayout
+                    android:id="@+id/aft_result_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_height"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:id="@+id/aft_text_two"
+                            android:layout_width="@dimen/activity_text_width"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlack"
+                            android:textFontWeight="300"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/aft_exp_button_two"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/aft_replace_button_two"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/aft_image_two"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
+                    <Button
+                        android:id="@+id/aft_search_button_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
+                </LinearLayout>
+                ///////////////////////////////
+                // Afternoon activity three
+                <LinearLayout
+                    android:id="@+id/aft_result_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_height"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:id="@+id/aft_text_three"
+                            android:layout_width="@dimen/activity_text_width"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlack"
+                            android:textFontWeight="300"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/aft_exp_button_three"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/aft_replace_button_three"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/aft_image_three"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
+                    <Button
+                        android:id="@+id/aft_search_button_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
+                </LinearLayout>
+            </LinearLayout>
+            ///////////////////////////////
+            // Evening activities
+            <LinearLayout
+                android:id="@+id/layout_evening"
+                android:layout_width="@dimen/parent_width"
+                android:layout_height="@dimen/parent_height"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/eve_title"
+                    android:layout_width="@dimen/time_header_width"
+                    android:layout_height="match_parent"
+                    android:text="@string/eve_results_title"
+                    android:textColor="@color/colorBlack"
+                    android:textFontWeight="300"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/time_header_textSize"
+                    android:layout_marginLeft="@dimen/time_header_marginLeft"/>
+                ///////////////////////////////
+                // Evening activity one
+                <LinearLayout
+                    android:id="@+id/eve_result_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_height"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/eve_text_one"
+                            android:layout_width="@dimen/activity_text_width"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlack"
+                            android:textFontWeight="300"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/eve_exp_button_one"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/eve_replace_button_one"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/eve_image_one"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
+                    <Button
+                        android:id="@+id/eve_search_button_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
+                </LinearLayout>
+                ///////////////////////////////
+                // Evening activity two
+                <LinearLayout
+                    android:id="@+id/eve_result_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_height"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:id="@+id/eve_text_two"
+                            android:layout_width="@dimen/activity_text_width"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlack"
+                            android:textFontWeight="300"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/eve_exp_button_two"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/eve_replace_button_two"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/eve_image_two"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
+                    <Button
+                        android:id="@+id/eve_search_button_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
+                </LinearLayout>
+                ///////////////////////////////
+                // Evening activity three
+                <LinearLayout
+                    android:id="@+id/eve_result_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_height"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/textbox_border">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:id="@+id/eve_text_three"
+                            android:layout_width="@dimen/activity_text_width"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlack"
+                            android:textFontWeight="300"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/activity_textSize"/>
+                        <LinearLayout
+                            android:layout_width="@dimen/button_layout_width"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+                            <Button
+                                android:id="@+id/eve_exp_button_three"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="top"
+                                android:onClick="ExpandActivity"
+                                android:text="@string/plus"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                            <Button
+                                android:id="@+id/eve_replace_button_three"
+                                android:layout_width="@dimen/small_button_width"
+                                android:layout_height="@dimen/small_button_height"
+                                android:layout_gravity="bottom"
+                                android:onClick="Replace"
+                                android:text="@string/replace"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/small_button_textSize" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/eve_image_three"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"/>-->
+                    <Button
+                        android:id="@+id/eve_search_button_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/search_button_textSize"
+                        android:textStyle="italic"
+                        android:onClick="Search"/>
+                </LinearLayout>
+            </LinearLayout>
+            ///////////////////////////////
+            // Error message
+            <TextView
+                android:id="@+id/try_again_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/error_message"
+                android:textSize="@dimen/error_message_textSize"
+                android:textColor="@color/colorBlack"
+                android:textAlignment="center"
+                android:layout_margin="@dimen/error_message_margin"
+                android:padding="@dimen/error_message_padding"
+                android:background="@drawable/textbox_border"/>
+            <Button
+                android:id="@+id/return_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/return_button_marginHorizontal"
+                android:layout_marginVertical="@dimen/return_button_marginVertical"
+                android:text="Return Home"
+                android:background="@drawable/menu_button"/>
+            <Button
+                android:id="@+id/return_selection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/return_button_marginHorizontal"
+                android:layout_marginVertical="@dimen/return_button_marginVertical"
+                android:text="Return to Selection"
+                android:background="@drawable/menu_button"/>
         </LinearLayout>
     </ScrollView>
 

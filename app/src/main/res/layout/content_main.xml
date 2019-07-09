@@ -14,38 +14,37 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/colorMainBG">
-
+        ////////////////
         <!-- Welcome -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome"
-            android:textSize="20sp"
+            android:textSize="@dimen/welcome_textSize"
             android:textColor="@color/colorBlack"
-            android:layout_margin="50dp"
+            android:layout_margin="@dimen/welcome_margin"
             android:layout_gravity="center"/>
         <!-- Get started -->
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/start_banner_height"
             android:gravity="center_horizontal"
-            android:layout_margin="30dp"
+            android:layout_margin="@dimen/start_banner_margin"
             android:text="@string/to_begin"
-            android:textSize="25sp"
+            android:textSize="@dimen/start_banner_textSize"
             android:textColor="@color/colorBlack"/>
         <!-- Get started button -->
         <Button
             android:id="@+id/menu_button"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/start_button_width"
+            android:layout_height="@dimen/start_button_height"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="@dimen/start_button_marginTop"
             android:gravity="center"
             android:background="@drawable/menu_button"
             android:text="@string/get_started"
-            android:textSize="30sp"
+            android:textSize="@dimen/start_button_textSize"
             android:textColor="@color/colorBlack"/>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

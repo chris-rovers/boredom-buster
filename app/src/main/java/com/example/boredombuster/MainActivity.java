@@ -4,15 +4,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -52,28 +47,6 @@ public class MainActivity extends AppCompatActivity {
     dbSetup();
   } // onCreate()
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_main, menu);
-    return true;
-  } // onCreateOptionsMenu()
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
-
-    //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
-      return true;
-    }
-
-    return super.onOptionsItemSelected(item);
-  } // onOptionsItemSelected()
-
   public void dbSetup()
   {
     // create db it if does not exist
@@ -106,13 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
     Cursor c = db.rawQuery("SELECT * FROM tbl_activity", null);
 
-    if(c != null) // no records
+    if(c != null)
     {
       if(c.getCount() <= 0)
       {
         // insert activities //////////////////////////////////////////////////////////////
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Go to a garage sale', 'Free', 'garage sales');");
-        db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Watch the sunrise', 'Free', null);");
+        db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Watch the sunrise', 'Free', 'sunrise ideas');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Go fishing', 'Free', 'fishing spots');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Go for a hike', 'Free', 'hiking spots');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Go for a bike ride', 'Free', 'bike paths');");
@@ -129,9 +102,9 @@ public class MainActivity extends AppCompatActivity {
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Play tennis', 'Free', 'tennis court');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Play baseball', 'Free', 'baseball field');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Play discgolf', 'Free', 'disc golf');");
-        db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Watch the sunset', 'Free', null);");
+        db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Watch the sunset', 'Free', 'sunsets ideas');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Trivia night', 'Free', 'trivia night');");
-        db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Do a puzzle', 'Free', null);");
+        db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Do a puzzle', 'Free', 'puzzles');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Read a book', 'Free', 'book store');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Go for a walk', 'Free', 'parks');");
         db.execSQL("INSERT INTO tbl_activity VALUES(?1, 'Make some crafts', 'Free', 'craft ideas');");
@@ -439,9 +412,8 @@ public class MainActivity extends AppCompatActivity {
         db.execSQL("INSERT INTO tbl_activity_group VALUES(?1, 74, 2);");
         db.execSQL("INSERT INTO tbl_activity_group VALUES(?1, 75, 2);");
         db.execSQL("INSERT INTO tbl_activity_group VALUES(?1, 76, 2);");
-
-      } // if(c.getCount() <= 0)
-    } // if(c != null)
+      } // end if(c.getCount() <= 0)
+    } // end if(c != null)
     db.close(); // close db connection, obviously
   } // dbSetup()
 
